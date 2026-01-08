@@ -8,12 +8,10 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <HiOutlineSparkles className="text-white h-5 w-5" />
-            </div>
+          <Link href="/" className="flex items-center gap-3">
+            <img src="/logo.png" alt="CareerSync Logo" className="h-10 w-auto" />
             <span className="text-xl font-black text-slate-900 tracking-tight">CareerSync AI</span>
-          </div>
+          </Link>
           <div className="flex items-center gap-6">
             <Link href="/login" className="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors">
               Sign In
@@ -117,11 +115,9 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-slate-200 py-12 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 bg-slate-900 rounded-md flex items-center justify-center">
-              <HiOutlineSparkles className="text-white h-4 w-4" />
-            </div>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="CareerSync Logo" className="h-8 w-auto" />
             <span className="font-black text-slate-900 tracking-tight">CareerSync AI</span>
           </div>
           <div className="flex gap-8 text-sm font-bold text-slate-500">

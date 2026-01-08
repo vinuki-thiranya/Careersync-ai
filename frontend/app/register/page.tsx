@@ -74,10 +74,8 @@ export default function RegisterPage() {
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 py-12">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-xl">C</span>
-            </div>
+          <Link href="/" className="inline-flex flex-col items-center gap-3 mb-4">
+            <img src="/logo.png" alt="CareerSync Logo" className="h-16 w-auto" />
             <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-primary-500">
               CareerSync AI
             </span>

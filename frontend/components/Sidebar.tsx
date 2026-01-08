@@ -31,9 +31,12 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col w-64 bg-slate-900 min-h-screen text-white fixed left-0 top-0">
       <div className="p-6">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
-          CareerSync AI
-        </h1>
+        <Link href="/dashboard" className="flex items-center gap-3">
+          <img src="/logo.png" alt="Logo" className="h-8 w-auto filter brightness-0 invert" />
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+            CareerSync AI
+          </h1>
+        </Link>
       </div>
 
       <nav className="flex-1 mt-6">
