@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "CareerSync AI API",
+    "version": "1.0.0",
+    "description": "AI-Powered Career Intelligence Platform API Collection"
+  },
+  "auth": [
+    {
+      "endpoint": "/api/v1/auth/register",
+      "method": "POST",
+      "description": "Register new user",
+      "body": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "password": "password123",
+        "password_confirmation": "password123"
+      }
+    },
+    {
+      "endpoint": "/api/v1/auth/login",
+      "method": "POST",
+      "description": "Login user",
+      "body": {
+        "email": "test@example.com",
+        "password": "password123"
+      }
+    },
+    {
+      "endpoint": "/api/v1/auth/profile",
+      "method": "GET",
+      "description": "Get user profile (protected)",
+      "auth": "Bearer {token}"
+    }
+  ],
+  "applications": [
+    {
+      "endpoint": "/api/v1/applications",
+      "method": "GET",
+      "description": "List all applications",
+      "auth": "Bearer {token}",
+      "params": {
+        "page": 1
+      }
+    },
+    {
+      "endpoint": "/api/v1/applications",
+      "method": "POST",
+      "description": "Create new application",
+      "auth": "Bearer {token}",
+      "body": {
+        "company_name": "Google",
+        "position_title": "Senior Software Engineer",
+        "status": "applied",
+        "applied_at": "2024-01-07",
+        "job_description": "Looking for senior engineer with...",
+        "salary_range": "$200k-$280k",
+        "job_url": "https://careers.google.com"
+      }
+    },
+    {
+      "endpoint": "/api/v1/applications/{id}",
+      "method": "GET",
+      "description": "Get single application",
+      "auth": "Bearer {token}"
+    },
+    {
+      "endpoint": "/api/v1/applications/{id}",
+      "method": "PUT",
+      "description": "Update application",
+      "auth": "Bearer {token}",
+      "body": {
+        "status": "interview",
+        "notes": "Great conversation with hiring manager"
+      }
+    }
+  ],
+  "resume": [
+    {
+      "endpoint": "/api/v1/resume/analyze",
+      "method": "POST",
+      "description": "Analyze resume for ATS compatibility",
+      "auth": "Bearer {token}",
+      "body": {
+        "resume_text": "John Doe...",
+        "job_description": "Senior Developer position..."
+      }
+    },
+    {
+      "endpoint": "/api/v1/resume/analyses",
+      "method": "GET",
+      "description": "List all resume analyses",
+      "auth": "Bearer {token}"
+    }
+  ],
+  "coverLetters": [
+    {
+      "endpoint": "/api/v1/cover-letters/generate",
+      "method": "POST",
+      "description": "Generate AI cover letter",
+      "auth": "Bearer {token}",
+      "body": {
+        "company_name": "Google",
+        "position_title": "Senior Software Engineer",
+        "company_info": "Tech company specializing in search...",
+        "job_description": "Looking for senior engineer..."
+      }
+    }
+  ],
+  "analytics": [
+    {
+      "endpoint": "/api/v1/analytics/dashboard",
+      "method": "GET",
+      "description": "Get dashboard metrics",
+      "auth": "Bearer {token}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/trends",
+      "method": "GET",
+      "description": "Get application trends",
+      "auth": "Bearer {token}",
+      "params": {
+        "days": 30
+      }
+    }
+  ]
+}

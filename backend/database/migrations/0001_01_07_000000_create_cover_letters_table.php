@@ -1,0 +1,28 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('cover_letters', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('application_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('company_name');
+            $table->string('position_title');
+            $table->longText('content');
+            $table->string('tone')->default('professional');
+            $table->timestamp('generated_at');
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('cover_letters');
+    }
+};
